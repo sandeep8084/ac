@@ -1,4 +1,3 @@
-
 import { AcUnit, Build, Speed, CheckCircle } from "@mui/icons-material";
 
 export const heroData = {
@@ -12,11 +11,11 @@ export const heroData = {
       variant: "contained",
       href: "tel:9642929237",
     },
-    {
-      label: "Get Free Estimate",
-      variant: "outlined",
-      href: "#estimate",
-    },
+    // {
+    //   label: "Get Free Estimate",
+    //   variant: "outlined",
+    //   href: "#estimate",
+    // },
   ],
   features: [
     {

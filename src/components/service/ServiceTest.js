@@ -15,123 +15,120 @@ const ServiceTest = ({ service }) => {
   const handleGetQuote = () => {
     navigate("/contact");
   };
+
   return (
     <Card
       sx={{
         width: "100%",
         height: "100%",
+        borderRadius: 3,
+        overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-        transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+        transition: "0.3s ease",
         "&:hover": {
-          transform: "translateY(-4px)",
-          boxShadow: 6,
+          transform: "translateY(-6px)",
+          boxShadow: "0 6px 28px rgba(0,0,0,0.12)",
         },
       }}
     >
+      {/* Bigger Image Section */}
       <CardMedia
-        component="div"
+        component="img"
+        src={service.image}
+        alt={service.title}
         sx={{
-          height: 150,
-          bgcolor: "primary.light",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-          flexShrink: 0,
+          height: 200,
+          width: "100%",
+          objectFit: "cover",
         }}
-      >
-        {/* {service.icon} */}
-
-        <img
-          src={service.image}
-          alt={service.title}
-          style={{
-            height: "100%",
-            width: "100%",
-            objectFit: "cover",
-          }}
-        />
-      </CardMedia>
+      />
 
       <CardContent
         sx={{
-          flexGrow: 1,
           display: "flex",
           flexDirection: "column",
-          p: { xs: 2, sm: 2.5, md: 3 },
+          p: { xs: 2, sm: 3 },
+          flexGrow: 1,
         }}
       >
+        {/* Title */}
         <Typography
           variant="h5"
-          component="h3"
           sx={{
-            fontSize: { xs: "1.25rem", sm: "1.375rem", md: "1.5rem" },
-            mb: 1,
-            minHeight: "1em",
+            fontWeight: 600,
+            fontSize: { xs: "1.3rem", sm: "1.45rem" },
+            mb: 1.5,
+            color: "primary.main",
           }}
         >
           {service.title}
         </Typography>
 
+        {/* Description */}
         <Typography
           variant="body1"
           color="text.secondary"
           sx={{
-            fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem" },
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+            lineHeight: 1.6,
             mb: 2,
-            minHeight: "4.5em",
-            lineHeight: 1.5,
+            minHeight: "60px",
           }}
         >
           {service.description}
         </Typography>
 
-        <Box sx={{ mb: 1, flexGrow: 1, minHeight: "20px" }}>
-          {service.features.map((feature, idx) => (
+        {/* Features */}
+        <Box sx={{ mb: 2 }}>
+          {service.features?.map((feature, idx) => (
             <Chip
               key={idx}
               label={feature}
               size="small"
+              variant="outlined"
               sx={{
                 mr: 1,
                 mb: 1,
-                fontSize: { xs: "0.75rem", sm: "0.813rem" },
+                borderRadius: "6px",
+                fontSize: "0.75rem",
               }}
-              variant="outlined"
             />
           ))}
         </Box>
 
+        {/* Price + Button */}
         <Box
           sx={{
+            mt: "auto",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            mt: "auto",
             pt: 2,
             flexDirection: { xs: "column", sm: "row" },
-            gap: { xs: 1.5, sm: 0 },
+            gap: 2,
           }}
         >
           <Typography
-            variant="body2"
-            fontWeight="bold"
+            variant="h6"
             color="primary"
             sx={{
-              fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem" },
+              fontWeight: "bold",
+              visibility: service.price ? "visible" : "hidden",
             }}
           >
             {/* {service.price} */}
           </Typography>
+
           <Button
             variant="contained"
-            size="small"
-            fullWidth={false}
+            size="medium"
             onClick={handleGetQuote}
             sx={{
-              fontSize: { xs: "0.75rem", sm: "0.813rem", md: "0.875rem" },
-              px: { xs: 2, sm: 2.5, md: 3 },
+              px: 3,
+              fontWeight: 600,
+              borderRadius: 2,
               width: { xs: "100%", sm: "auto" },
             }}
           >
@@ -144,3 +141,7 @@ const ServiceTest = ({ service }) => {
 };
 
 export default ServiceTest;
+
+
+
+

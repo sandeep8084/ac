@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Grid,
   Card,
@@ -111,7 +110,8 @@ const ServiceCardsRow = () => {
                       "&:hover": { textDecoration: "underline" },
                     }}
                   >
-                    View More <ArrowForwardIcon sx={{ fontSize: 18, ml: 0.5 }} />
+                    View More{" "}
+                    <ArrowForwardIcon sx={{ fontSize: 18, ml: 0.5 }} />
                   </Link>
                 </CardContent>
               </Box>

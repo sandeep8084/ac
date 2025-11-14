@@ -19,7 +19,7 @@ const ServiceCard = ({ service }) => {
     <Card
       sx={{
         width: "100%",
-        height: "100%",
+        // height: "100%",
         display: "flex",
         flexDirection: "column",
         transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
@@ -42,16 +42,6 @@ const ServiceCard = ({ service }) => {
         }}
       >
         {service.icon}
-
-        {/* <img
-          src={service.image}
-          alt={service.title}
-          style={{
-            height: "100%",
-            width: "100%",
-            objectFit: "cover",
-          }}
-        /> */}
       </CardMedia>
 
       <CardContent

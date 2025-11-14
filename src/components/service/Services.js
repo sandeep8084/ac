@@ -141,54 +141,13 @@ const Services = () => {
             </Grid>
           ))}
         </Grid>
-
-        {/* <Box
-          sx={{
-            textAlign: "center",
-            mt: { xs: 4, sm: 5, md: 6 },
-          }}
-        >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem", lg: "2.125rem" },
-            }}
-          >
-            Need Help Choosing?
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{
-              mb: 3,
-              fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem" },
-              px: { xs: 0, sm: 2 },
-            }}
-          >
-            Call us for a free consultation and personalized recommendations
-          </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="large"
-            href="tel:9642929237"
-            sx={{
-              fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem", lg: "1.125rem" },
-              px: { xs: 3, sm: 4, md: 5, lg: 6 },
-              py: { xs: 1, sm: 1.25, md: 1.5 },
-            }}
-          >
-            Call 9642929237
-          </Button>
-        </Box> */}
-
-        {/* <Box>
-          <ServiceHelpline />
-        </Box> */}
       </Container>
     </Box>
   );
 };
 
 export default Services;
+
+
+
+

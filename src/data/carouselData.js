@@ -16,6 +16,6 @@ export const carouselItems = [
     title: "Energy-Efficient Solutions",
     description: "Save energy and money with our advanced AC systems.",
     buttonText: "Get A Quote",
-    imageUrl: "/assets/hero.jpg",
+    imageUrl: "/assets/banner3.png",
   },
 ];

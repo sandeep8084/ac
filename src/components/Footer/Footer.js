@@ -35,7 +35,8 @@ const Footer = () => {
         <Grid
           container
           spacing={4}
-          justifyContent="center"
+          justifyContent="space-between"
+          // justifyContent="center"
           alignItems="flex-start"
         >
           {/* Company Info */}

@@ -5,14 +5,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { carouselItems } from "../data/carouselData"; 
+import { carouselItems } from "../data/carouselData";
 
 const Hero = () => {
   return (
     <Box sx={{ position: "relative", width: "100%" }}>
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
-        navigation
+        // navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
         loop
@@ -39,6 +39,7 @@ const Hero = () => {
                   zIndex: 1,
                 }}
               />
+
               <Container
                 maxWidth="md"
                 sx={{
@@ -73,3 +74,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
