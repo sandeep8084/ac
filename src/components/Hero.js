@@ -13,7 +13,7 @@ const Hero = () => {
       <Swiper
         modules={[Autoplay, Pagination]}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 4000 }}
         loop
         style={{ width: "100%" }}
       >
