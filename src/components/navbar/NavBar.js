@@ -36,7 +36,7 @@ const NavBar = () => {
       {/* Logo */}
       <Box
         sx={{
-          my: 2,
+          my: 1,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -45,7 +45,7 @@ const NavBar = () => {
         <img
           src="/assets/alokaremovebg.png"
           alt="Aloka Enterprises Logo"
-          style={{ height: 40, marginBottom: 8 }}
+          style={{ height: 45, marginBottom: 0 }}
         />
       </Box>
 
@@ -54,30 +54,6 @@ const NavBar = () => {
           <ListItem key={item.label} disablePadding>
             <ListItemText
               primary={
-                // <Button
-                //   component={Link}
-                //   to={item.path}
-                //   sx={{
-                //     width: "100%",
-                //     color:
-                //       location.pathname === item.path
-                //         ? theme.palette.primary.contrastText
-                //         : theme.palette.primary.contrastText,
-                //     bgcolor:
-                //       location.pathname === item.path
-                //         ? theme.palette.secondary.main
-                //         : "transparent",
-                //     "&:hover": {
-                //       bgcolor: theme.palette.secondary.main,
-                //       color: theme.palette.primary.contrastText,
-                //     },
-                //     textTransform: "none",
-                //     fontWeight: 600,
-                //   }}
-                // >
-                //   {item.label}
-                // </Button>
-
                 <Button
                   component={Link}
                   to={item.path}
@@ -93,7 +69,7 @@ const NavBar = () => {
                       color: theme.palette.secondary.main,
                     },
                     textTransform: "none",
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   {item.label}
@@ -159,30 +135,6 @@ const NavBar = () => {
           ) : (
             <Box sx={{ display: "flex", gap: 2 }}>
               {navItems.map((item) => (
-                // <Button
-                //   key={item.label}
-                //   component={Link}
-                //   to={item.path}
-                //   sx={{
-                //     color:
-                //       location.pathname === item.path
-                //         ? theme.palette.primary.contrastText
-                //         : theme.palette.primary.contrastText,
-                //     bgcolor:
-                //       location.pathname === item.path
-                //         ? theme.palette.secondary.main
-                //         : "transparent",
-                //     "&:hover": {
-                //       bgcolor: theme.palette.secondary.main,
-                //       color: theme.palette.primary.contrastText,
-                //     },
-                //     textTransform: "none",
-                //     fontWeight: 600,
-                //   }}
-                // >
-                //   {item.label}
-                // </Button>
-
                 <Button
                   key={item.label}
                   component={Link}
@@ -198,7 +150,7 @@ const NavBar = () => {
                       color: theme.palette.secondary.main,
                     },
                     textTransform: "none",
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   {item.label}

@@ -28,7 +28,7 @@ const Footer = () => {
         bgcolor: theme.palette.primary.main,
         color: theme.palette.primary.contrastText,
         py: 6,
-        mt: 8,
+        mt: { xs: 0, md: 6 },
       }}
     >
       <Container maxWidth="lg">

@@ -11,7 +11,7 @@ const theme = createTheme({
     },
     background: {
       default: "#F6F8FB", // Cool White - Page background
-      paper: "#A4D3F5", // Ice Blue - Card and section backgrounds
+       paper: "#A4D3F5", // Ice Blue - Card and section backgrounds
     },
     text: {
       primary: "#2E2E2E", // Graphite Gray - For most text

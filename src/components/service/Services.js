@@ -42,27 +42,27 @@ const services = [
     price: "Call for pricing",
     image: "/assets/install3.jpg",
   },
-  {
-    icon: <Settings sx={{ fontSize: { xs: 40, sm: 45, md: 50 } }} />,
-    title: "AC Consultation",
-    description:
-      "Regular maintenance to keep your system running efficiently year-round.",
-    features: [
-      "Seasonal tune-ups",
-      "Filter replacement",
-      "Performance optimization",
-    ],
-    price: "Starting at $99",
-    image: "/assets/install3.jpg",
-  },
-  {
-    icon: <Speed sx={{ fontSize: { xs: 40, sm: 45, md: 50 } }} />,
-    title: "Emergency Service",
-    description: "Round-the-clock emergency AC repair when you need it most.",
-    features: ["24/7 availability", "Fast response", "Weekend service"],
-    price: "Call for pricing",
-    image: "/assets/install2.jpg",
-  },
+  // {
+  //   icon: <Settings sx={{ fontSize: { xs: 40, sm: 45, md: 50 } }} />,
+  //   title: "AC Consultation",
+  //   description:
+  //     "Regular maintenance to keep your system running efficiently year-round.",
+  //   features: [
+  //     "Seasonal tune-ups",
+  //     "Filter replacement",
+  //     "Performance optimization",
+  //   ],
+  //   price: "Starting at $99",
+  //   image: "/assets/install3.jpg",
+  // },
+  // {
+  //   icon: <Speed sx={{ fontSize: { xs: 40, sm: 45, md: 50 } }} />,
+  //   title: "Emergency Service",
+  //   description: "Round-the-clock emergency AC repair when you need it most.",
+  //   features: ["24/7 availability", "Fast response", "Weekend service"],
+  //   price: "Call for pricing",
+  //   image: "/assets/install2.jpg",
+  // },
 ];
 
 const Services = () => {
@@ -120,6 +120,7 @@ const Services = () => {
           sx={{
             display: "flex",
             alignItems: "stretch",
+            justifyContent: "center",
           }}
         >
           {services.map((service, index) => (
@@ -132,7 +133,8 @@ const Services = () => {
               key={index}
               sx={{
                 display: "flex",
-                width: "355px",
+                minWidth: "300px",
+                maxWidth: "500px",
               }}
             >
               {/* <ServiceCard service={service} /> */}
@@ -147,7 +149,3 @@ const Services = () => {
 };
 
 export default Services;
-
-
-
-

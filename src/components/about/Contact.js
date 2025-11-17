@@ -17,12 +17,13 @@ import CustomTextField from "../../components/customComponents/CustomTextField";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     service: "",
     message: "",
   });
+
   const [showAlert, setShowAlert] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
 
   const services = [
     "AC Installation",
@@ -33,29 +34,53 @@ const Contact = () => {
   ];
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // PHONE VALIDATION: Only digits + max 10 characters
+    if (name === "phone") {
+      const phoneRegex = /^[0-9]{0,10}$/;
+
+      // Block non-numeric characters
+      if (!phoneRegex.test(value)) return;
+
+      // Set validation message
+      if (value.length !== 10) {
+        setPhoneError("Phone number must be exactly 10 digits");
+      } else {
+        setPhoneError("");
+      }
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validate before submitting
+    if (formData.phone.length !== 10) {
+      setPhoneError("Phone number must be exactly 10 digits");
+      return;
+    }
+
     console.log("Form submitted:", formData);
     setShowAlert(true);
     setTimeout(() => setShowAlert(false), 5000);
 
     setFormData({
       name: "",
-      email: "",
       phone: "",
       service: "",
       message: "",
     });
+    setPhoneError("");
   };
 
   return (
-    <Box sx={{ py: { xs: 8, md: 6 }, bgcolor: "background.default" }}>
+    <Box sx={{ py: { xs: 6, md: 6 }, bgcolor: "background.default" }}>
       <Container maxWidth="sm">
         <Box sx={{ textAlign: "center", mb: { xs: 6, md: 4 } }}>
           <Typography
@@ -79,7 +104,6 @@ const Contact = () => {
           sx={{
             borderRadius: 3,
             overflow: "hidden",
-            // bgcolor: "primary.main",
             bgcolor: "secondary.main",
           }}
         >
@@ -106,6 +130,7 @@ const Contact = () => {
             )}
 
             <Box component="form" onSubmit={handleSubmit}>
+              {/* Full Name */}
               <CustomTextField
                 label="Full Name"
                 name="name"
@@ -116,6 +141,7 @@ const Contact = () => {
                 placeholder="Enter your full name"
               />
 
+              {/* Phone Number with validation */}
               <CustomTextField
                 fullWidth
                 label="Phone Number"
@@ -125,46 +151,33 @@ const Contact = () => {
                 required
                 variant="outlined"
                 sx={{ mb: 2 }}
-                placeholder="+91 XXXXX XXXXX"
+                placeholder="0987654321"
+                error={Boolean(phoneError)}
+                helperText={phoneError}
               />
 
+              {/* Service Dropdown */}
               <FormControl
                 fullWidth
                 sx={{
                   mb: 2,
-                  "& .MuiInputLabel-root": {
-                    color: "white", // label color
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "white", // focused label
-                  },
+                  "& .MuiInputLabel-root": { color: "white" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "white" },
                   "& .MuiOutlinedInput-root": {
-                    color: "white", // text color
-                    "& fieldset": {
-                      borderColor: "white", // default border
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "white", // hover border
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "white", // focused border
-                    },
+                    color: "white",
+                    "& fieldset": { borderColor: "white" },
+                    "&:hover fieldset": { borderColor: "white" },
+                    "&.Mui-focused fieldset": { borderColor: "white" },
                   },
-                  "& .MuiSelect-icon": {
-                    color: "white", // dropdown arrow color
-                  },
-                  "& .MuiMenuItem-root": {
-                    color: "black", // dropdown list text (keep black for visibility)
-                  },
+                  "& .MuiSelect-icon": { color: "white" },
                 }}
               >
-                <InputLabel>Service Needed *</InputLabel>
+                <InputLabel>Service Needed</InputLabel>
                 <Select
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  label="Service Needed *"
-                  required
+                  label="Service Needed"
                 >
                   {services.map((service) => (
                     <MenuItem key={service} value={service}>
@@ -172,9 +185,9 @@ const Contact = () => {
                     </MenuItem>
                   ))}
                 </Select>
-                ~
               </FormControl>
 
+              {/* Message Field */}
               <CustomTextField
                 fullWidth
                 label="Message"
@@ -188,6 +201,7 @@ const Contact = () => {
                 placeholder="Describe your AC needs or any specific issues..."
               />
 
+              {/* Buttons */}
               <Box
                 sx={{
                   display: "flex",
@@ -205,15 +219,14 @@ const Contact = () => {
                     py: 1.5,
                     fontSize: "1rem",
                     fontWeight: 600,
-                    // backgroundColor: "secondary.main",
                     backgroundColor: "secondary.main",
                     border: "1px solid #A4D3F5",
-
                     "&:hover": { backgroundColor: "primary.main" },
                   }}
                 >
                   Send Request
                 </Button>
+
                 <Button
                   variant="outlined"
                   size="large"
@@ -228,7 +241,7 @@ const Contact = () => {
                     backgroundColor: "primary.main",
                     "&:hover": {
                       borderColor: "primary.contrastText",
-                      backgroundColor:"primary.main"
+                      backgroundColor: "primary.main",
                     },
                   }}
                 >

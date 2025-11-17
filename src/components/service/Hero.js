@@ -70,11 +70,19 @@ const Hero = () => {
 
           <Grid item xs={12} md={6}>
             <Box
-              sx={{ bgcolor: "rgba(255,255,255,0.1)", p: 3, borderRadius: 2 }}
+            //  sx={{ bgcolor: "rgba(255,255,255,0.1)", borderRadius: 2, padding:2 }}
             >
-              <Grid container spacing={2}>
+              <Grid
+                container
+                spacing={2}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignContent: "stretch",
+                }}
+              >
                 {heroData.features.map((feature, index) => (
-                  <Grid item xs={6} key={index}>
+                  <Grid item xs={12} key={index}>
                     <Card
                       sx={{
                         height: "100%",

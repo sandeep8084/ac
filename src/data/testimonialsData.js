@@ -42,7 +42,7 @@ export const testimonials = [
 
 export const stats = [
   { number: "500+", label: "Happy Customers" },
-  { number: "4.9", label: "Average Rating" },
+  { number: "4.9", label: "Good Rating" },
   { number: "24/7", label: "Support Available" },
   { number: "15+", label: "Years Experience" },
 ];
