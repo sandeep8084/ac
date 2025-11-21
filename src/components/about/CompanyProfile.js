@@ -6,7 +6,8 @@ const CompanyProfile = () => {
       component="section"
       sx={{
         py: { xs: 6, md: 10 },
-        backgroundColor: "background.paper",
+        // backgroundColor: "background.paper",
+        backgroundColor: "#a4d3f533",
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
@@ -43,8 +44,8 @@ const CompanyProfile = () => {
           >
             <Box
               component="img"
-              src="/assets/logobgw1.png"
-              // src="/assets/alokaremovebg.png"
+              // src="/assets/logobgw1.png"
+              src="/assets/alokaremovebg.png"
               alt="Company Logo"
               loading="lazy"
               sx={{

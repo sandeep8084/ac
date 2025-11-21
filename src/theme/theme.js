@@ -11,7 +11,7 @@ const theme = createTheme({
     },
     background: {
       default: "#F6F8FB", // Cool White - Page background
-       paper: "#A4D3F5", // Ice Blue - Card and section backgrounds
+      paper: "#A4D3F5", // Ice Blue - Card and section backgrounds
     },
     text: {
       primary: "#2E2E2E", // Graphite Gray - For most text
@@ -71,15 +71,25 @@ const theme = createTheme({
         },
       },
     },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#A4D3F5", // Ice Blue
-          borderRadius: "16px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-        },
-      },
-    },
+    // MuiCard: {
+    //   styleOverrides: {
+    //     root: {
+    //       backgroundColor: "#A4D3F5", // Ice Blue
+    //       borderRadius: "16px",
+    //       boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+    //     },
+    //   },
+    // },
+
+    // MuiCardContent: {
+    //   styleOverrides: {
+    //     root: {
+    //       backgroundColor: "transparent !important",
+         
+    //       padding: "16px !important",
+    //     },
+    //   },
+    // },
   },
 });
 

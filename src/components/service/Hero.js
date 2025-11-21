@@ -88,6 +88,7 @@ const Hero = () => {
                         height: "100%",
                         width: "262px",
                         bgcolor: "background.paper",
+                        // bgcolor:"#a4d3f533",
                         borderRadius: 2,
                         boxShadow: 3,
                         textAlign: "center",
