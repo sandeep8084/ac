@@ -46,12 +46,20 @@ const Footer = () => {
             md={4}
             sx={{ textAlign: { xs: "center", md: "left" } }}
           >
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: 700, mb: 2, letterSpacing: 0.5 }}
-            >
-              Aloka Enterprises
-            </Typography>
+            {/* Logo */}
+            <Box
+              component="img"
+              src="/assets/logobgw1.png"
+              alt="Aloka Enterprises Logo"
+              sx={{
+                width: 150,
+                height: "auto",
+                mb: 2,
+                mx: { xs: "auto", md: 0 },
+                display: "block",
+              }}
+            />
+
             <Typography
               variant="body2"
               sx={{
