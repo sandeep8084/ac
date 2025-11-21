@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
+import ClientSlider from "../ClientSlider";
 
 const CompanyProfile = () => {
   return (
@@ -96,6 +97,9 @@ const CompanyProfile = () => {
           </Box>
         </Box>
       </Container>
+
+<ClientSlider/>
+
     </Box>
   );
 };
